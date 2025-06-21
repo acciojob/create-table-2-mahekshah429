@@ -5,18 +5,14 @@ function createTable() {
   const rn = parseInt(rows);
   const cn = parseInt(cols);
 
-  // Validate input
   if (isNaN(rn) || isNaN(cn) || rn <= 0 || cn <= 0) {
     alert("Please enter positive numeric values.");
     return;
   }
 
   const table = document.getElementById("myTable");
-
-  // Clear existing table
   table.innerHTML = "";
 
-  // Create rows and cells
   for (let i = 0; i < rn; i++) {
     const row = document.createElement("tr");
 
