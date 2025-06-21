@@ -1,4 +1,31 @@
 function createTable() {
-    //Write your code here
-  
+  const rows = prompt("Input number of rows");
+  const cols = prompt("Input number of columns");
+
+  const rn = parseInt(rows);
+  const cn = parseInt(cols);
+
+  // Validate input
+  if (isNaN(rn) || isNaN(cn) || rn <= 0 || cn <= 0) {
+    alert("Please enter positive numeric values.");
+    return;
+  }
+
+  const table = document.getElementById("myTable");
+
+  // Clear existing table
+  table.innerHTML = "";
+
+  // Create rows and cells
+  for (let i = 0; i < rn; i++) {
+    const row = document.createElement("tr");
+
+    for (let j = 0; j < cn; j++) {
+      const cell = document.createElement("td");
+      cell.textContent = `Row-${i} Column-${j}`;
+      row.appendChild(cell);
+    }
+
+    table.appendChild(row);
+  }
 }
